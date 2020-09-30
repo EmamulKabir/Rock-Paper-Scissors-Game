@@ -1,0 +1,68 @@
+import random
+print("Welcome to Rock, Paper, Scissors game")
+print("Choose \nR for Rock \nP for Paper \nS for Scissors")
+
+choose = ['R', 'P', 'S']
+total_chances = 10
+no_of_chances = 0
+computer_points = 0
+human_points = 0
+
+# using the while loop
+while no_of_chances<total_chances:
+    _input = input("Rock, Paper, Scissors:")
+    _random = random.choice(choose)
+
+    if _input == _random:
+        print("Its tie")
+
+    # If input is R
+    elif _input == 'R' and _random == 'S':
+        human_points = human_points+1
+        print("You won")
+        print(f"Your points:{human_points} and Computer points:{computer_points}")
+    elif _input == 'R' and _random == 'P':
+        computer_points = computer_points+1
+        print("You loose")
+        print(f"Computer points:{computer_points} and Your points:{human_points}")
+
+    # If input is S
+    elif _input == 'S' and _random =='P':
+        human_points = human_points + 1
+        print("You won")
+        print(f"Your points:{human_points} and Computer points:{computer_points}")
+    elif _input == 'S' and _random == 'R':
+        computer_points = computer_points + 1
+        print("You loose")
+        print(f"Computer points:{computer_points} and Your points:{human_points}")
+
+    # If input is P
+    elif _input == 'P' and _random == 'R':
+        human_points = human_points + 1
+        print("You won")
+        print(f"Your points:{human_points} and Computer points:{computer_points}")
+    elif _input == 'P' and _random == 'S':
+        computer_points = computer_points + 1
+        print("You loose")
+        print(f"Computer points:{computer_points} and Your points:{human_points}")
+
+    else:
+        print("You entered wrong input\n")
+
+    no_of_chances = no_of_chances + 1
+    print(f"You have {total_chances - no_of_chances} chances out of {total_chances} \n")
+
+
+print("Game over")
+
+if computer_points>human_points:
+    print(f"Computer won by {computer_points-human_points} points")
+    print("Computer wins!")
+
+if computer_points<human_points:
+    print(f"You won by {human_points-computer_points} points")
+    print("Congratulations(You win)")
+
+if computer_points == human_points:
+    print("Both points are same")
+
